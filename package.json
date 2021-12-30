@@ -1,0 +1,13 @@
+{
+  "name": "calculator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "jquery-3.6.0.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+      ,"start": "run npm lite",
+      "lite": "lite-server"
+  },
+  "author": "",
+  "license": "ISC"
+}
