@@ -1,114 +1,179 @@
-$(document).ready(function()
+function ans()
 {
-    var val1=0;
-    var val2=0;
-    var val3=0;
-    var vala=0;
-    $(".value4").text(0);
+  if(document.getElementById("inputx").value=="" || document.getElementById("inputy").value=="")
+  {
+    alert("either of x or y is empty");
+    return;
+  }
 
-    $(".type").click(function()
-      {
-        $(".value4").text("");
-        $(".delete").css("pointer-events","auto");
-        if($(".value2").text()!="")
-        {
-          $(".symbie").css("pointer-events","none");
-          $(".equals").css("pointer-events","auto");
-            val3=$(this).text();
-            $(".value3").append(val3);
-            val3=$(".value3").text();
-            console.log(val3);
-        }
+  var numOne, numTwo;
+  numOne = parseInt(document.getElementById("inputx").value);
+  numTwo = parseInt(document.getElementById("inputy").value);
 
-        else if($(".value1").text()=="")
-        {
-            $(".symbie").css("pointer-events","auto");
-            vala=$(this).text();
-            $(".value1").append(vala);
-            val1=$(".value1").text();
-            console.log(val1);
-        }
+  if(numTwo==0)
+  {
+    alert("the denominator y cannot be 0");
+    return;
+  }
+  
+  quo = parseInt(numOne/numTwo);
+  rem= numOne%numTwo;
+  document.getElementById("outputx").value=quo;
+  document.getElementById("outputy").value=rem;
+  
 
-        else if($(".value1").text()!="")
-        {
-            $(".symbie").css("pointer-events","auto");
-            vala=$(this).text();
-            $(".value1").append(vala);
-            val1=$(".value1").text();
-            console.log(val1);
-        }
-    })
+  var sum=numOne+numTwo;
+  console.log(sum);
+}
+
+function reset()
+{
+  numOne = document.getElementById("inputx").value="";
+  numTwo = document.getElementById("inputy").value="";
+  document.getElementById("outputx").value=0;
+  document.getElementById("outputy").value=0;
+}
+
+function click1()
+{
+  if(document.getElementById("inputy").focus==true)
+  {
+    console.log(1);
+    document.getElementById("inputy").value=document.getElementById("inputy").value+"1";
+  }
+  else
+  {
+    console.log(1);
+    document.getElementById("inputx").value=document.getElementById("inputx").value+"1"; 
+  }
+}
+
+function click2()
+{
+  if(document.getElementById("inputx").focus)
+  {
+    console.log(2);
+    document.getElementById("inputx").value=document.getElementById("inputx").value+"2";
+  }
+  else
+  {
+    console.log(2);
+    document.getElementById("inputy").value=document.getElementById("inputy").value+"2"; 
+  }
+}
+
+function click3()
+{
+  if(document.getElementById("inputx").focus)
+  {
+    console.log(3);
+    document.getElementById("inputx").value=document.getElementById("inputx").value+"3";
+  }
+  else
+  {
+    console.log(3);
+    document.getElementById("inputy").value=document.getElementById("inputy").value+"3"; 
+  }
+}
+
+function click4()
+{
+  if(document.getElementById("inputx").focus)
+  {
+    console.log(4);
+    document.getElementById("inputx").value=document.getElementById("inputx").value+"4";
+  }
+  else
+  {
+    console.log(4);
+    document.getElementById("inputy").value=document.getElementById("inputy").value+"4"; 
+  }
+}
+
+function click5()
+{
+  if(document.getElementById("inputx").focus)
+  {
+    console.log(5);
+    document.getElementById("inputx").value=document.getElementById("inputx").value+"5";
+  }
+  else
+  {
+    console.log(5);
+    document.getElementById("inputy").value=document.getElementById("inputy").value+"5"; 
+  }
+}
 
 
-    $(".symbie").click(function()
-      {
-        val2=$(this).text();
-        $(".value2").empty().append(val2);
-        val2=$(".value2").text();
-    })
+function click6()
+{
+  if(document.getElementById("inputx").focus)
+  {
+    console.log(6);
+    document.getElementById("inputx").value=document.getElementById("inputx").value+"6";
+  }
+  else
+  {
+    console.log(6);
+    document.getElementById("inputy").value=document.getElementById("inputy").value+"6"; 
+  }
+}
 
+function click7()
+{
+  if(document.getElementById("inputx").focus)
+  {
+    console.log(7);
+    document.getElementById("inputx").value=document.getElementById("inputx").value+"7";
+  }
+  else
+  {
+    console.log(7);
+    document.getElementById("inputy").value=document.getElementById("inputy").value+"7"; 
+  }
+}
 
-    $(".delete").click(function()
-        {
-          if($(".value3").text()!="")
-          {
-              $(".value3").empty();
-              val3=0;
-              $(".equals").css("pointer-events","none");
-          }
-          else if($(".value2").text()!="")
-          {
-              $(".value2").empty();
-              val2=0;
-          }
-          else if($(".value1").text()!="")
-          {
-              $(".value1").empty();
-              val1=0;
-              $(".value4").text(0);
-          }
-    })
+function click8()
+{
+  if(document.getElementById("inputx").focus)
+  {
+    console.log(8);
+    document.getElementById("inputx").value=document.getElementById("inputx").value+"8";
+    
+  }
+  else
+  {
+    console.log(8);
+    document.getElementById("inputy").value=document.getElementById("inputy").value+"8"; 
+  } 
+}
 
-    let ans=0;
-    $(".equals").click(function()
-        {
-          $(".equals").css("pointer-events","none");
-            if($(".value2").text()=="+")
-            {
-              ans=Number($(".value1").text())+Number($(".value3").text());
-            }
-            else if($(".value2").text()=="-")
-            {
-              ans=Number($(".value1").text())-Number($(".value3").text());
-            }
-            else if($(".value2").text()=="*")
-            {
-              ans=Number($(".value1").text())*Number($(".value3").text());
-            }
-            else if($(".value2").text()=="/")
-            {
-              ans=Number($(".value1").text())/Number($(".value3").text());
-            }
-            $(".value1").empty();
-            $(".value2").empty();
-            $(".value3").empty();
-            $(".value1").text(ans);
-            val3=0;
-            val2=0;
-            val1=$(".value1").text();
-            console.log(val1);
-            $(".symbie").css("pointer-events","auto");
-        })
+function click9()
+{
+  if(document.getElementById("inputx").focus)
+  {
+    console.log(9);
+    document.getElementById("inputx").value=document.getElementById("inputx").value+"9";
+  }
+  else
+  {
+    console.log(9);
+    document.getElementById("inputy").value=document.getElementById("inputy").value+"9"; 
+  }
+}
 
-      $(".classcan").click(function()
-      {
-        $(".value1").empty();
-        $(".value2").empty();
-        $(".value3").empty();
-        val3=0;
-        val2=0;
-        val1=0;
-        $(".value4").text(0);
-        $(".symbie").css("pointer-events","none");
-      })
-})
+function click0()
+{
+  if(document.getElementById("inputx").focus)
+  {
+    console.log(0);
+    document.getElementById("inputx").value=document.getElementById("inputx").value+"0";
+    
+  }
+  else
+  {
+    console.log(0);
+    document.getElementById("inputy").value=document.getElementById("inputy").value+"0"; 
+  }
+}
+
